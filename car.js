@@ -34,6 +34,14 @@ class Car {
 				)
 			) {
 				this.acc += 0.2;
+			} else if (
+				arraysEqual(
+					this.getCurrentColor(),
+					[ 14, 209, 69 ],
+				)
+			) {
+				document.body.innerHTML =
+					'Geschafft!';
 			} else {
 				this.acc = 0.2;
 			}

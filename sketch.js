@@ -26,8 +26,6 @@ function draw (){
 		width,
 		height,
 	);
-	fill(255, 0, 0);
-	rect(200, 200, 40, 40);
 	car.update();
 	car.show();
 }

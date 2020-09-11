@@ -17,7 +17,7 @@ function setup (){
 	car = new Car(250, 550, 180, carImage);
 }
 
-function draw (){
+function draw (){ // main draw loop
 	loadPixels();
 	image(
 		track,

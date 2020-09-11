@@ -56,7 +56,7 @@ class Car {
 		this.vel = getVectorFromMagnitudeAndDirection(
 			this.acc,
 			(this.angle + 90) % 360, // this is needed because in p5 0° is right.
-		).limit(5);
+		).limit(10);
 		if (keyIsDown(65)) {
 			//a
 			this.angle -= 3;

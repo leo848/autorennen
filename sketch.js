@@ -8,7 +8,7 @@ const MAX_LEVELS = 2;
 function preload (){
 	carImage = loadImage('auto.png');
 	for (let i = 1; i < MAX_LEVELS; i++) {
-		tracks.append(loadImage(`track${i}.png`));
+		tracks.push(loadImage(`track${i}.png`));
 	}
 }
 

@@ -64,3 +64,7 @@ function arraysEqual (a, b){
 	}
 	return true;
 }
+
+function nextLevel (){
+	level %= MAX_LEVELS;
+}

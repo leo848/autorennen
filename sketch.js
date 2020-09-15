@@ -2,7 +2,7 @@ let carImage, car, track;
 
 function preload (){
 	carImage = loadImage('auto.png');
-	track = loadImage('strecke1.png');
+	track = loadImage('track1.png');
 }
 
 function setup (){

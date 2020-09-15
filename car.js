@@ -18,25 +18,26 @@ class Car {
 	}
 
 	update () {
+		gcc = this.getCurrentColor()
 		if (keyIsDown(87)) {
 			// 87 is key code for 'w'
 			if (
 				arraysEqual(
-					this.getCurrentColor(),
+					gcc,
 					[ 88, 88, 88 ],
 				)
 			)
 				this.acc += 0.1;
 			else if (
 				arraysEqual(
-					this.getCurrentColor(),
+					gcc,
 					[ 255, 255, 255 ],
 				)
 			) {
 				this.acc += 0.2;
 			} else if (
 				arraysEqual(
-					this.getCurrentColor(),
+					gcc,
 					[ 14, 209, 69 ],
 				)
 			) {

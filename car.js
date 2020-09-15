@@ -18,31 +18,23 @@ class Car {
 	}
 
 	update () {
-		gcc = this.getCurrentColor()
+		gcc = this.getCurrentColor();
 		if (keyIsDown(87)) {
 			// 87 is key code for 'w'
-			if (
-				arraysEqual(
-					gcc,
-					[ 88, 88, 88 ],
-				)
-			)
+			if (arraysEqual(gcc, [ 88, 88, 88 ]))
 				this.acc += 0.1;
 			else if (
-				arraysEqual(
-					gcc,
-					[ 255, 255, 255 ],
-				)
+				arraysEqual(gcc, [
+					255,
+					255,
+					255,
+				])
 			) {
 				this.acc += 0.2;
 			} else if (
-				arraysEqual(
-					gcc,
-					[ 14, 209, 69 ],
-				)
+				arraysEqual(gcc, [ 14, 209, 69 ])
 			) {
-				document.body.innerHTML =
-					'Geschafft!';
+				nextLevel();
 			} else {
 				this.acc = 0.2;
 			}

@@ -17,10 +17,11 @@ function setup (){
 		min(windowWidth, windowHeight),
 		min(windowWidth, windowHeight),
 	);
+	noSmooth();
 	background(20);
 	imageMode(CENTER);
 	angleMode(DEGREES);
-	noSmooth();
+
 	car = new Car(250, 550, 180, carImage);
 }
 

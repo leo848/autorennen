@@ -1,8 +1,15 @@
-let carImage, car, track;
+let carImage,
+	car,
+	tracks = [],
+	currentIndex = 0;
+
+const MAX_LEVELS = 2;
 
 function preload (){
 	carImage = loadImage('auto.png');
-	track = loadImage('track1.png');
+	for (let i = 1; i < MAX_LEVELS; i++){
+		tracks.append(loadImage(`track${i}.png`))
+	}
 }
 
 function setup (){
@@ -17,7 +24,8 @@ function setup (){
 	car = new Car(250, 550, 180, carImage);
 }
 
-function draw (){ // main draw loop
+function draw (){
+	// main draw loop
 	loadPixels();
 	image(
 		track,

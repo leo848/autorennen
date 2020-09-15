@@ -73,4 +73,16 @@ class Car {
 			pixels[index + 2],
 		];
 	}
+
+	changePosition (x, y) {
+		this.pos.x = x;
+		this.pos.y = y;
+	}
+
+	teleport (x, y) {
+		this.changePosition(x, y);
+		this.vel = createVector(0, 0);
+		this.acc = 0;
+		this.angle = 90;
+	}
 }

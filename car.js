@@ -18,7 +18,7 @@ class Car {
 	}
 
 	update () {
-		gcc = this.getCurrentColor();
+		let gcc = this.getCurrentColor();
 		if (keyIsDown(87)) {
 			// 87 is key code for 'w'
 			if (arraysEqual(gcc, [ 88, 88, 88 ]))

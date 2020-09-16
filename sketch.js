@@ -7,7 +7,7 @@ const MAX_LEVELS = 2;
 
 function preload() {
 	carImage = loadImage('auto.png');
-	for (let i = 1; i < MAX_LEVELS; i++) {
+	for (let i = 1; i <= MAX_LEVELS; i++) {
 		tracks.push(loadImage(`track${i}.png`));
 	}
 }
@@ -18,7 +18,7 @@ function setup() {
 		min(600, min(windowWidth, windowHeight)),
 	);
 	noSmooth();
-	pixelDensity(0);
+	pixelDensity(1);
 	background(20);
 	imageMode(CENTER);
 	angleMode(DEGREES);
@@ -66,7 +66,8 @@ function arraysEqual(a, b) {
 	return true;
 }
 
-function nextLevel() {
-	++level;
-	level %= MAX_LEVELS;
+function nextLevel(car) {
+	car.teleport(); //FIXME
+	++currentIndex;
+	currentIndex %= MAX_LEVELS;
 }

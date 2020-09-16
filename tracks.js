@@ -1,6 +1,6 @@
-const TRACKS = [
+let TRACKS = [
     {
         src: "track1.png",
-        spawn: []
+        spawn: [249.5, 566]
     }
 ]

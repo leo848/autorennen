@@ -5,10 +5,12 @@ let carImage,
 
 const MAX_LEVELS = 2;
 
+let h1;
+
 function preload() {
 	carImage = loadImage('auto.png');
-	for (let i = 1; i <= MAX_LEVELS; i++) {
-		tracks.push(loadImage(`track${i}.png`));
+	for (let i = 0; i < TRACKS.length; i++) {
+		TRACKS[i].image = loadImage(TRACKS[i].src)
 	}
 }
 
@@ -17,13 +19,14 @@ function setup() {
 		min(600, min(windowWidth, windowHeight)),
 		min(600, min(windowWidth, windowHeight)),
 	);
+	h1 = createDiv("0,0")
 	noSmooth();
 	pixelDensity(1);
 	background(20);
 	imageMode(CENTER);
 	angleMode(DEGREES);
 
-	car = new Car(250, 550, 180, carImage);
+	car = new Car(tracks[0].spawn[0], tracks[0].spawn[1], 180, carImage);
 }
 
 function draw() {
@@ -38,6 +41,7 @@ function draw() {
 	);
 	car.update();
 	car.show();
+	h1.html(`${mouseX}, ${mouseY}`)
 }
 
 function getVectorFromMagnitudeAndDirection( // this is needed for the car movement.

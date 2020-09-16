@@ -35,7 +35,7 @@ class Car {
 				arraysEqual(gcc, [14, 209, 69])
 			) {
 				this.teleport(200, 200)
-				nextLevel();
+				nextLevel(this);
 			} else {
 				this.acc = 0.2;
 			}

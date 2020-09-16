@@ -5,5 +5,9 @@ let TRACKS = [{
     {
         src: "track2.png",
         spawn: [55.5, 404, 270]
+    },
+    {
+        src: "track3.png",
+        spawn: [200, 200, 90]
     }
 ]

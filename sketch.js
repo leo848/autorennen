@@ -73,5 +73,5 @@ function arraysEqual(a, b) {
 function nextLevel(car) {
 	car.teleport(TRACKS[currentIndex + 1].spawn[0], TRACKS[currentIndex + 1].spawn[1], TRACKS[currentIndex + 1].spawn[2]); //FIXME
 	++currentIndex;
-	currentIndex %= MAX_LEVELS;
+	currentIndex %= TRACKS.length;
 }

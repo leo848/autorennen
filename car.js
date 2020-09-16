@@ -1,5 +1,5 @@
 class Car {
-	constructor (x, y, angle, image) {
+	constructor(x, y, angle, image) {
 		this.pos = createVector(x, y);
 		this.angle = angle;
 		this.image = image;
@@ -8,7 +8,7 @@ class Car {
 		this.vel = createVector(0, 0);
 	}
 
-	show () {
+	show() {
 		push();
 		translate(this.pos.x, this.pos.y);
 		rotate(this.angle);
@@ -17,11 +17,11 @@ class Car {
 		pop();
 	}
 
-	update () {
+	update() {
 		let gcc = this.getCurrentColor();
 		if (keyIsDown(87)) {
 			// 87 is key code for 'w'
-			if (arraysEqual(gcc, [ 88, 88, 88 ]))
+			if (arraysEqual(gcc, [88, 88, 88]))
 				this.acc += 0.1;
 			else if (
 				arraysEqual(gcc, [
@@ -32,7 +32,7 @@ class Car {
 			) {
 				this.acc += 0.2;
 			} else if (
-				arraysEqual(gcc, [ 14, 209, 69 ])
+				arraysEqual(gcc, [14, 209, 69])
 			) {
 				nextLevel();
 			} else {
@@ -52,18 +52,28 @@ class Car {
 		).limit(10);
 		if (keyIsDown(65)) {
 			//a
-			this.angle -= 3;
+			setTimeout(
+				() => {
+					this.angle -= 3;
+				}, 150
+			)
+
 		}
 
 		if (keyIsDown(68)) {
 			//s
-			this.angle += 3;
+			setTimeout(
+				() => {
+					this.angle += 3;
+				}, 150
+			)
+
 		}
 
 		this.pos.add(this.vel);
 	}
 
-	getCurrentColor () {
+	getCurrentColor() {
 		let x = Math.floor(this.pos.x);
 		let y = Math.floor(this.pos.y);
 		let index = (x + y * width) * 4;
@@ -74,12 +84,12 @@ class Car {
 		];
 	}
 
-	changePosition (x, y) {
+	changePosition(x, y) {
 		this.pos.x = x;
 		this.pos.y = y;
 	}
 
-	teleport (x, y) {
+	teleport(x, y) {
 		this.changePosition(x, y);
 		this.vel = createVector(0, 0);
 		this.acc = 0;

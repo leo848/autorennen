@@ -26,7 +26,7 @@ function setup() {
 	imageMode(CENTER);
 	angleMode(DEGREES);
 
-	car = new Car(TRACKS[0].spawn[0], TRACKS[0].spawn[1], 180, carImage);
+	car = new Car(TRACKS[0].spawn[0], TRACKS[0].spawn[1], TRACKS[0].spawn[2], carImage);
 }
 
 function draw() {
@@ -71,7 +71,7 @@ function arraysEqual(a, b) {
 }
 
 function nextLevel(car) {
-	car.teleport(); //FIXME
+	car.teleport(TRACKS[currentIndex + 1].spawn[0], TRACKS[currentIndex + 1].spawn[1], TRACKS[currentIndex + 1].spawn[2]); //FIXME
 	++currentIndex;
 	currentIndex %= MAX_LEVELS;
 }

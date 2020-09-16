@@ -18,10 +18,9 @@ class Car {
 	}
 
 	update() {
-		let gcc = this.getCurrentColor();
 		if (keyIsDown(87)) {
 			// 87 is key code for 'w'
-			if (arraysEqual(gcc, [88, 88, 88]))
+			if (this.gccEquals([88, 88, 88]))
 				this.acc += 0.1;
 			else if (
 				arraysEqual(gcc, [
@@ -32,7 +31,7 @@ class Car {
 			) {
 				this.acc += 0.2;
 			} else if (
-				arraysEqual(gcc, [14, 209, 69])
+				arraysEqual(this.gccEquals([14, 209, 69]))
 			) {
 				this.teleport(200, 200)
 				nextLevel(this);
@@ -85,15 +84,19 @@ class Car {
 		];
 	}
 
+	gccEquals(arr) {
+		return arraysEqual(this.getCurrentColor(), arr)
+	}
+
 	changePosition(x, y) {
 		this.pos.x = x;
 		this.pos.y = y;
 	}
 
-	teleport(x, y) {
+	teleport(x, y, angle) {
 		this.changePosition(x, y);
 		this.vel = createVector(0, 0);
 		this.acc = 0;
-		this.angle = 90;
+		this.angle = angle;
 	}
 }

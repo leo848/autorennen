@@ -14,8 +14,8 @@ function preload() {
 
 function setup() {
 	createCanvas(
-		min(windowWidth, windowHeight),
-		min(windowWidth, windowHeight),
+		min(600, min(windowWidth, windowHeight)),
+		min(600, min(windowWidth, windowHeight)),
 	);
 	noSmooth();
 	background(20);

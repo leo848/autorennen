@@ -45,11 +45,11 @@ class Car {
 					this.acc = 0;
 				}
 			} else {
-				if (this.acc - 0.3 >= 0) {
-					this.acc -= 0.3;
+				if (this.acc - 0.4 >= 0) {
+					this.acc -= 0.4;
 				} else {
 					this.acc = 0;
-					
+
 				}
 			}
 		}

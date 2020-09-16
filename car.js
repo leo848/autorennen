@@ -55,7 +55,7 @@ class Car {
 			setTimeout(
 				() => {
 					this.angle -= 3;
-				}, 150
+				}, 100
 			)
 
 		}
@@ -65,7 +65,7 @@ class Car {
 			setTimeout(
 				() => {
 					this.angle += 3;
-				}, 150
+				}, 100
 			)
 
 		}

@@ -8,6 +8,6 @@ let TRACKS = [{
     },
     {
         src: "track3.png",
-        spawn: [200, 200, 90]
+        spawn: [51.5, 63, 270]
     }
 ]

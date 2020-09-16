@@ -34,6 +34,10 @@ class Car {
 			) {
 				this.teleport(200, 200)
 				nextLevel(this);
+			} else if (this.gccEquals([
+					236, 28, 36
+				])) {
+				this.teleport(TRACKS[currentIndex].spawn[0], TRACKS[currentIndex].spawn[1], TRACKS[currentIndex].spawn[2])
 			} else {
 				this.acc = 0.2;
 			}

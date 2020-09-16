@@ -30,7 +30,7 @@ class Car {
 			) {
 				this.acc += 0.2;
 			} else if (
-				arraysEqual(this.gccEquals([14, 209, 69]))
+				this.gccEquals([14, 209, 69])
 			) {
 				this.teleport(200, 200)
 				nextLevel(this);
@@ -45,10 +45,11 @@ class Car {
 					this.acc = 0;
 				}
 			} else {
-				if (this.acc - 0.4 >= 0) {
-					this.acc -= 0.4;
+				if (this.acc - 0.3 >= 0) {
+					this.acc -= 0.3;
 				} else {
 					this.acc = 0;
+					
 				}
 			}
 		}

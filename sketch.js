@@ -5,14 +5,14 @@ let carImage,
 
 const MAX_LEVELS = 2;
 
-function preload (){
+function preload() {
 	carImage = loadImage('auto.png');
 	for (let i = 1; i < MAX_LEVELS; i++) {
 		tracks.push(loadImage(`track${i}.png`));
 	}
 }
 
-function setup (){
+function setup() {
 	createCanvas(
 		min(windowWidth, windowHeight),
 		min(windowWidth, windowHeight),
@@ -25,7 +25,7 @@ function setup (){
 	car = new Car(250, 550, 180, carImage);
 }
 
-function draw (){
+function draw() {
 	// main draw loop
 	loadPixels();
 	image(
@@ -39,17 +39,17 @@ function draw (){
 	car.show();
 }
 
-function getVectorFromMagnitudeAndDirection ( // this is needed for the car movement.
+function getVectorFromMagnitudeAndDirection( // this is needed for the car movement.
 	mag,
 	dir,
-){
+) {
 	return createVector(
 		mag * cos(dir),
 		mag * sin(dir),
 	);
 }
 
-function arraysEqual (a, b){
+function arraysEqual(a, b) {
 	if (a === b) return true;
 	if (a == null || b == null) return false;
 	if (a.length !== b.length) return false;
@@ -65,6 +65,7 @@ function arraysEqual (a, b){
 	return true;
 }
 
-function nextLevel (){
+function nextLevel() {
+	++level;
 	level %= MAX_LEVELS;
 }

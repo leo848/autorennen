@@ -23,8 +23,7 @@ class Car {
 			if (this.gccEquals([88, 88, 88]))
 				this.acc += 0.1;
 			else if (
-				arraysEqual(gcc, [
-					255,
+				this.gccEquals([255,
 					255,
 					255,
 				])
@@ -39,10 +38,18 @@ class Car {
 				this.acc = 0.2;
 			}
 		} else {
-			if (this.acc - 0.1 >= 0) {
-				this.acc -= 0.1;
+			if (this.gccEquals([88, 88, 88]) || this.gccEquals([255, 255, 255])) {
+				if (this.acc - 0.1 >= 0) {
+					this.acc -= 0.1;
+				} else {
+					this.acc = 0;
+				}
 			} else {
-				this.acc = 0;
+				if (this.acc - 0.4 >= 0) {
+					this.acc -= 0.4;
+				} else {
+					this.acc = 0;
+				}
 			}
 		}
 

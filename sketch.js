@@ -18,6 +18,7 @@ function setup() {
 		min(600, min(windowWidth, windowHeight)),
 	);
 	noSmooth();
+	pixelDensity(0);
 	background(20);
 	imageMode(CENTER);
 	angleMode(DEGREES);

@@ -26,14 +26,14 @@ function setup() {
 	imageMode(CENTER);
 	angleMode(DEGREES);
 
-	car = new Car(tracks[0].spawn[0], tracks[0].spawn[1], 180, carImage);
+	car = new Car(TRACKS[0].spawn[0], TRACKS[0].spawn[1], 180, carImage);
 }
 
 function draw() {
 	// main draw loop
 	loadPixels();
 	image(
-		tracks[currentIndex],
+		TRACKS[currentIndex].image,
 		width / 2,
 		height / 2,
 		width,

@@ -20,6 +20,7 @@ class Car {
 	update() {
 		if (keyIsDown(87)) {
 			// 87 is key code for 'w'
+			timerShouldRun = true;
 			if (this.gccEquals([88, 88, 88]))
 				this.acc += 0.1;
 			else if (

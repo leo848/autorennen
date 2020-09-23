@@ -3,7 +3,8 @@ let carImage,
 	tracks = [],
 	currentIndex = 0,
 	timer = 0,
-	timerInterval;
+	timerInterval,
+	timerShouldRun;
 
 const MAX_LEVELS = 2;
 
@@ -31,7 +32,10 @@ function setup() {
 	car = new Car(TRACKS[0].spawn[0], TRACKS[0].spawn[1], TRACKS[0].spawn[2], carImage);
 
 	timerInterval = window.setInterval(() => {
-		timer += 0.1;
+		if (timerShouldRun) {
+			timer += 0.1;
+		}
+
 		timer = Number(timer.toFixed(2));
 	}, 100)
 }
@@ -48,7 +52,8 @@ function draw() {
 	);
 	car.update();
 	car.show();
-	text(timer.toString(), 200, 200)
+	textSize(40)
+	text(timer.toString(), 20, 560)
 	h1.html(`${mouseX}, ${mouseY}`)
 }
 

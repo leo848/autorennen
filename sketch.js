@@ -87,10 +87,17 @@ function nextLevel(car) {
 	car.teleport(TRACKS[currentLevel + 1].spawn[0], TRACKS[currentLevel + 1].spawn[1], TRACKS[currentLevel + 1].spawn[2]); //FIXME
 	++currentLevel;
 	currentLevel %= TRACKS.length;
-	document.cookie = `username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC`;
+	setCookie(`highscoreLevel${currentLevel}`, timer, 1000)
 	resetTimer()
 }
 
 function resetTimer() {
 	timer = 0;
+}
+
+function setCookie(cname, cvalue, exdays) {
+	var d = new Date();
+	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	var expires = "expires=" + d.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }

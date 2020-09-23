@@ -1,7 +1,9 @@
 let carImage,
 	car,
 	tracks = [],
-	currentIndex = 0;
+	currentIndex = 0,
+	timer = 0,
+	timerInterval;
 
 const MAX_LEVELS = 2;
 
@@ -27,6 +29,11 @@ function setup() {
 	angleMode(DEGREES);
 
 	car = new Car(TRACKS[0].spawn[0], TRACKS[0].spawn[1], TRACKS[0].spawn[2], carImage);
+
+	timerInterval = window.setInterval(() => {
+		timer += 0.1;
+		timer = Number(timer.toFixed(2));
+	}, 100)
 }
 
 function draw() {
@@ -41,6 +48,7 @@ function draw() {
 	);
 	car.update();
 	car.show();
+	text(timer.toString(), 200, 200)
 	h1.html(`${mouseX}, ${mouseY}`)
 }
 

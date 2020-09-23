@@ -1,10 +1,10 @@
 let carImage,
 	car,
 	tracks = [],
-	currentIndex = 0,
+	currentLevel = 0,
 	timer = 0,
 	timerInterval,
-	timerShouldRun;
+	timerShouldRun = false;
 
 const MAX_LEVELS = 2;
 
@@ -44,7 +44,7 @@ function draw() {
 	// main draw loop
 	loadPixels();
 	image(
-		TRACKS[currentIndex].image,
+		TRACKS[currentLevel].image,
 		width / 2,
 		height / 2,
 		width,
@@ -84,7 +84,13 @@ function arraysEqual(a, b) {
 }
 
 function nextLevel(car) {
-	car.teleport(TRACKS[currentIndex + 1].spawn[0], TRACKS[currentIndex + 1].spawn[1], TRACKS[currentIndex + 1].spawn[2]); //FIXME
-	++currentIndex;
-	currentIndex %= TRACKS.length;
+	car.teleport(TRACKS[currentLevel + 1].spawn[0], TRACKS[currentLevel + 1].spawn[1], TRACKS[currentLevel + 1].spawn[2]); //FIXME
+	++currentLevel;
+	currentLevel %= TRACKS.length;
+	document.cookie = `username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC`;
+	resetTimer()
+}
+
+function resetTimer() {
+	timer = 0;
 }

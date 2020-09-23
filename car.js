@@ -31,8 +31,9 @@ class Car {
 			) {
 				this.acc += 0.2;
 			} else if (
-				this.gccEquals([14, 209, 69])
+				this.gccEquals([14, 209, 69]) // green
 			) {
+				timerShouldRun = false;
 				this.teleport(200, 200)
 				nextLevel(this);
 			} else if (this.gccEquals([
@@ -107,9 +108,12 @@ class Car {
 	}
 
 	teleport(x, y, angle) {
-		this.changePosition(x, y);
-		this.vel = createVector(0, 0);
-		this.acc = 0;
-		this.angle = angle;
+		setTimeout(() => {
+			this.changePosition(x, y);
+			this.vel = createVector(0, 0);
+			this.acc = 0;
+			this.angle = angle;
+		}, 30);
+
 	}
 }
